@@ -40,6 +40,8 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
     --green:#1E6B3C;
     --green-light:#E8F5EE;
     --red:#C0392B;
+    --purple:#5B3FA6;
+    --purple-light:#EEE8FF;
   }
   html{scroll-behavior:smooth}
   body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
@@ -65,6 +67,8 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   .hero-bullets{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2.5rem}
   .hero-bullet{display:flex;align-items:center;gap:0.75rem;color:rgba(255,255,255,0.85);font-size:0.95rem}
   .hero-bullet::before{content:'✓';width:22px;height:22px;background:rgba(30,107,60,0.3);border:1px solid rgba(30,107,60,0.6);color:#5BB985;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0}
+  .hero-bullet.highlight{color:var(--gold-light);font-weight:500}
+  .hero-bullet.highlight::before{background:rgba(201,146,42,0.25);border-color:rgba(201,146,42,0.5);color:var(--gold-light)}
   .hero-cta-wrap{display:flex;flex-direction:column;gap:1rem}
   .btn-primary{display:block;text-align:center;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--navy-dark);padding:1.1rem 2rem;border-radius:10px;font-size:1.1rem;font-weight:700;text-decoration:none;transition:all 0.25s;box-shadow:0 8px 32px rgba(201,146,42,0.4)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,146,42,0.55)}
@@ -78,12 +82,15 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   .kit-card-sub{color:rgba(255,255,255,0.5);font-size:0.8rem;margin-bottom:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1)}
   .kit-item{display:flex;align-items:flex-start;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
   .kit-item:last-child{border-bottom:none}
+  .kit-item.new-item{position:relative}
   .kit-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
   .kit-icon.blue{background:rgba(30,107,60,0.2);border:1px solid rgba(30,107,60,0.3)}
   .kit-icon.gold{background:rgba(201,146,42,0.2);border:1px solid rgba(201,146,42,0.3)}
   .kit-icon.teal{background:rgba(27,58,92,0.4);border:1px solid rgba(100,160,220,0.3)}
+  .kit-icon.purple{background:rgba(91,63,166,0.25);border:1px solid rgba(91,63,166,0.45)}
   .kit-item-name{color:var(--white);font-size:0.9rem;font-weight:500;line-height:1.3}
   .kit-item-desc{color:rgba(255,255,255,0.45);font-size:0.75rem;margin-top:2px}
+  .kit-new-badge{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--gold-light));color:var(--navy-dark);font-size:0.6rem;font-weight:800;padding:0.15rem 0.45rem;border-radius:4px;letter-spacing:0.06em;vertical-align:middle;margin-left:0.4rem;text-transform:uppercase}
   .kit-price-wrap{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center}
   .kit-price-de{color:rgba(255,255,255,0.4);font-size:0.85rem;text-decoration:line-through}
   .kit-price{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--gold-light);font-weight:900;line-height:1}
@@ -111,13 +118,22 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   .kit-section .section-sub{color:rgba(255,255,255,0.6)}
   .kit-section .section-tag{background:rgba(201,146,42,0.15);border-color:rgba(201,146,42,0.35);color:var(--gold-light)}
   .kit-content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
-  .kit-content-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem;transition:all 0.25s;cursor:default}
+  .kit-content-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.75rem;transition:all 0.25s;cursor:default;position:relative}
   .kit-content-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(201,146,42,0.3);transform:translateY(-3px)}
+  .kit-content-card.novo{border-color:rgba(201,146,42,0.35);background:rgba(201,146,42,0.07)}
+  .kit-content-card.novo:hover{background:rgba(201,146,42,0.12);border-color:rgba(201,146,42,0.55)}
+  .kit-novo-ribbon{position:absolute;top:1rem;right:1rem;background:linear-gradient(90deg,var(--gold),var(--gold-light));color:var(--navy-dark);font-size:0.65rem;font-weight:800;padding:0.2rem 0.6rem;border-radius:100px;letter-spacing:0.08em;text-transform:uppercase}
   .kit-content-num{font-family:'Playfair Display',serif;font-size:3rem;color:rgba(201,146,42,0.2);line-height:1;margin-bottom:0.5rem;font-weight:900}
   .kit-content-icon{font-size:1.75rem;margin-bottom:0.75rem}
   .kit-content-card h3{font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
   .kit-content-card p{font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.65}
   .kit-content-tag{display:inline-block;margin-top:1rem;background:rgba(201,146,42,0.15);color:var(--gold-light);padding:0.2rem 0.7rem;border-radius:100px;font-size:0.72rem;font-weight:500}
+
+  /* ── PROMPTS HIGHLIGHT ── */
+  .prompts-highlight{background:rgba(91,63,166,0.12);border:1px solid rgba(91,63,166,0.3);border-radius:12px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;align-items:flex-start;gap:1rem}
+  .prompts-highlight-icon{font-size:2rem;flex-shrink:0}
+  .prompts-highlight h4{color:var(--gold-light);font-size:1rem;font-weight:600;margin-bottom:0.3rem}
+  .prompts-highlight p{color:rgba(255,255,255,0.6);font-size:0.85rem;line-height:1.6}
 
   /* ── BENEFÍCIOS ── */
   .benefits-section{background:var(--cream)}
@@ -136,6 +152,9 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   .prompt-tabs{display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap}
   .prompt-tab{padding:0.4rem 0.9rem;border-radius:6px;font-size:0.8rem;font-weight:500;cursor:pointer;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);transition:all 0.2s;background:transparent}
   .prompt-tab.active{background:var(--gold);border-color:var(--gold);color:var(--navy-dark);font-weight:600}
+  .prompts-cta-box{margin-top:1.5rem;background:rgba(201,146,42,0.1);border:1px solid rgba(201,146,42,0.25);border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .prompts-cta-box p{color:rgba(255,255,255,0.7);font-size:0.875rem;line-height:1.5}
+  .prompts-cta-box strong{color:var(--gold-light)}
 
   /* ── DEPOIMENTOS ── */
   .testi-section{background:var(--light)}
@@ -183,6 +202,8 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   .pricing-include-item{display:flex;align-items:center;gap:0.75rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.9rem;color:rgba(255,255,255,0.8)}
   .pricing-include-item:last-child{border-bottom:none}
   .pricing-include-item::before{content:'✓';width:20px;height:20px;background:rgba(30,107,60,0.25);border:1px solid rgba(30,107,60,0.5);color:#5BB985;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0}
+  .pricing-include-item.destaque{color:var(--gold-light);font-weight:500}
+  .pricing-include-item.destaque::before{background:rgba(201,146,42,0.2);border-color:rgba(201,146,42,0.5);color:var(--gold-light);content:'✓'}
   .pricing-btn{display:block;text-align:center;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--navy-dark);padding:1.1rem 2rem;border-radius:10px;font-size:1.1rem;font-weight:700;text-decoration:none;transition:all 0.25s;box-shadow:0 8px 32px rgba(201,146,42,0.35);margin-bottom:1rem}
   .pricing-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,146,42,0.5)}
   .pricing-guarantees{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap}
@@ -225,6 +246,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
     .forwho-grid{grid-template-columns:1fr}
     .kit-card{margin-top:2rem}
     nav{padding:0.75rem 1rem}
+    .prompts-cta-box{flex-direction:column}
   }
 
   /* ── ANIMAÇÕES ── */
@@ -265,6 +287,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
         <div class="hero-bullet">Planilha de honorários com calculadora de custo-hora automática</div>
         <div class="hero-bullet">3 contratos profissionais editáveis prontos para assinar</div>
         <div class="hero-bullet">Checklist de onboarding com 80+ itens do 1º contato ao encerramento</div>
+        <div class="hero-bullet highlight">🤖 NOVO: 80 Prompts para IA na Advocacia — banco completo em PDF</div>
       </div>
       <div class="hero-cta-wrap">
         <a href="#pricing" class="btn-primary">
@@ -277,7 +300,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
     <div class="hero-right">
       <div class="kit-card">
         <div class="kit-card-title">Kit Advocacia Prática</div>
-        <div class="kit-card-sub">6 materiais profissionais · Acesso imediato</div>
+        <div class="kit-card-sub">7 materiais profissionais · Acesso imediato</div>
         <div class="kit-item">
           <div class="kit-icon blue">📖</div>
           <div>
@@ -318,6 +341,13 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
           <div>
             <div class="kit-item-name">Checklist de Onboarding de Cliente</div>
             <div class="kit-item-desc">80+ itens · 10 etapas · Do 1º contato ao encerramento</div>
+          </div>
+        </div>
+        <div class="kit-item new-item">
+          <div class="kit-icon purple">🤖</div>
+          <div>
+            <div class="kit-item-name">80 Prompts para IA na Advocacia <span class="kit-new-badge">NOVO</span></div>
+            <div class="kit-item-desc">Banco completo · Todas as áreas · PDF pronto para usar</div>
           </div>
         </div>
         <div class="kit-price-wrap">
@@ -376,7 +406,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   <div class="container">
     <div class="section-tag">O que você leva</div>
     <h2 class="section-h">Tudo que você precisa para começar a advocacia autônoma do jeito certo</h2>
-    <p class="section-sub">Seis materiais profissionais desenvolvidos especificamente para o advogado que quer estrutura, autonomia e tecnologia a favor do seu crescimento.</p>
+    <p class="section-sub">Sete materiais profissionais desenvolvidos especificamente para o advogado que quer estrutura, autonomia e tecnologia a favor do seu crescimento.</p>
     <div class="kit-content-grid">
       <div class="kit-content-card">
         <div class="kit-content-num">01</div>
@@ -420,6 +450,22 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
         <p>10 etapas completas: triagem, consulta, documentos, contrato, boas-vindas, início dos trabalhos, controle financeiro, comunicações, encerramento e pedido de indicação.</p>
         <div class="kit-content-tag">Do primeiro contato ao offboarding</div>
       </div>
+      <div class="kit-content-card novo">
+        <div class="kit-novo-ribbon">✦ NOVO</div>
+        <div class="kit-content-num">07</div>
+        <div class="kit-content-icon">🤖</div>
+        <h3>80 Prompts para IA na Advocacia</h3>
+        <p>Banco completo com 80 prompts organizados por categoria: petições, recursos, contratos, pesquisa jurídica, comunicação com clientes, marketing e gestão do escritório.</p>
+        <div class="kit-content-tag">PDF completo · Todas as áreas do direito</div>
+      </div>
+    </div>
+
+    <div class="prompts-highlight">
+      <div class="prompts-highlight-icon">🤖</div>
+      <div>
+        <h4>Por que 80 prompts fazem diferença?</h4>
+        <p>Enquanto a maioria dos advogados usa a IA de forma genérica e imprecisa, você terá comandos testados e calibrados para o contexto jurídico — economizando horas de tentativa e erro e entregando resultados com qualidade técnica desde o primeiro uso.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -429,7 +475,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
   <div class="container">
     <div class="section-tag">IA na prática</div>
     <h2 class="section-h">Prompts prontos para usar no seu dia a dia</h2>
-    <p class="section-sub">O manual inclui mais de 20 prompts testados para as tarefas mais comuns da advocacia autônoma. Copie, adapte e use agora.</p>
+    <p class="section-sub">O kit inclui <strong>80 prompts testados</strong> para as tarefas mais comuns da advocacia autônoma — do manual ao banco completo em PDF. Copie, adapte e use agora.</p>
     <div class="prompt-showcase">
       <div class="prompt-tabs">
         <button class="prompt-tab active" onclick="showPrompt('pesquisa')">Pesquisa jurídica</button>
@@ -449,6 +495,10 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
       </div>
       <div id="prompt-proposta" class="prompt-content">
         <div class="prompt-text">Me ajude a estruturar a apresentação da minha proposta de honorários para um caso de ação trabalhista com pedido estimado em R$ 45.000. Quero apresentar: (1) o que vou fazer em cada fase do processo, (2) os riscos que assumo ao entrar com a ação, (3) o que o cliente pode esperar em cada etapa, e (4) o valor dos honorários (R$ 800 de entrada + 25% de êxito). Tom: confiante, transparente, sem promessas de resultado. Máximo de 20 linhas.</div>
+      </div>
+      <div class="prompts-cta-box">
+        <p>Estes são apenas exemplos do manual. O kit agora inclui <strong>80 prompts completos em PDF</strong> — organizados por área e prontos para copiar e usar.</p>
+        <a href="#pricing" style="background:var(--gold);color:var(--navy-dark);padding:0.6rem 1.25rem;border-radius:8px;font-size:0.85rem;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0">Ver o kit completo →</a>
       </div>
     </div>
   </div>
@@ -478,7 +528,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
       <div class="benefit">
         <div class="benefit-icon">🤖</div>
         <h3>IA como ferramenta real</h3>
-        <p>Não é teoria sobre IA — são prompts testados, fluxos de trabalho concretos e exemplos do dia a dia da advocacia.</p>
+        <p>Não é teoria — são 80 prompts testados, fluxos de trabalho concretos e exemplos do dia a dia da advocacia.</p>
       </div>
       <div class="benefit">
         <div class="benefit-icon">💰</div>
@@ -590,6 +640,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
         <div class="pricing-include-item">Contrato — Honorários por Fase Processual (editável)</div>
         <div class="pricing-include-item">Contrato — Honorários Mistos: Entrada + Êxito (editável)</div>
         <div class="pricing-include-item">Checklist de Onboarding de Cliente — 80+ itens</div>
+        <div class="pricing-include-item destaque">🤖 NOVO — 80 Prompts para IA na Advocacia (PDF completo)</div>
         <div class="pricing-include-item">Acesso a todas as atualizações futuras dos materiais</div>
       </div>
       <a href="https://pay.hotmart.com/Q105836905X" target="_blank" class="pricing-btn">Quero o Kit por R$ 97 →</a>
@@ -624,7 +675,14 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
           Como recebo os materiais após a compra?
           <span class="faq-arrow">▾</span>
         </div>
-        <div class="faq-a">Logo após a confirmação do pagamento, você recebe um e-mail com o link para baixar todos os 6 arquivos. O acesso é imediato — não precisa esperar, não precisa entrar em nenhuma plataforma de cursos.</div>
+        <div class="faq-a">Logo após a confirmação do pagamento, você recebe um e-mail com o link para baixar todos os 7 arquivos. O acesso é imediato — não precisa esperar, não precisa entrar em nenhuma plataforma de cursos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          O que está incluído no banco de 80 prompts?
+          <span class="faq-arrow">▾</span>
+        </div>
+        <div class="faq-a">O PDF de 80 prompts é organizado por categoria: petições e recursos, pesquisa jurídica, comunicação com clientes, propostas de honorários, marketing e captação, e gestão do escritório. Cada prompt vem com instruções de uso e variações para diferentes situações — basta copiar, adaptar ao seu caso e usar.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
@@ -638,7 +696,7 @@ src="https://www.facebook.com/tr?id=1542797404307193&ev=PageView&noscript=1"
           Precisa ter experiência com IA para aproveitar o kit?
           <span class="faq-arrow">▾</span>
         </div>
-        <div class="faq-a">Não. O manual explica do zero como usar ferramentas de IA na prática jurídica — quais usar, como dar instruções (prompts), quais são os limites éticos e como integrar à rotina. Os 20+ prompts prontos funcionam em qualquer ferramenta (Claude, ChatGPT, etc.) sem conhecimento técnico prévio.</div>
+        <div class="faq-a">Não. O manual explica do zero como usar ferramentas de IA na prática jurídica — quais usar, como dar instruções (prompts), quais são os limites éticos e como integrar à rotina. Os 80 prompts prontos funcionam em qualquer ferramenta (Claude, ChatGPT, etc.) sem conhecimento técnico prévio.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">
